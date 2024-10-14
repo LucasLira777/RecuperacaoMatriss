@@ -49,4 +49,14 @@ public class Grid : MonoBehaviour
         }
     }
 
+    public bool IsOutOfBounds(int coordinate, SnakeController.Direction direction)
+    {
+        if (coordinate < 0 || coordinate >= gameBlocks.Length)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
 }
