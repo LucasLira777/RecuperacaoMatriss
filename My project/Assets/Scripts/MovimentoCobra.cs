@@ -21,4 +21,30 @@ public class MovimentoCobra : MonoBehaviour
         fruitBlockIndex = -1;
         snakeDirection = Direction.Right; // Inicialmente, a cobra vai para a direita
     }
+
+    public bool MoveSnake()
+    {
+        bool gameOver = false;
+        int newCoordinate = CalculateNewCoordinate();
+
+        if (snakeCoordinates.Contains(newCoordinate) || gridManager.IsOutOfBounds(newCoordinate, snakeDirection))
+        {
+            gameOver = true; // O jogo termina se a cobra colidir com ela mesma ou sair do grid
+        }
+        else
+        {
+            snakeCoordinates.Insert(0, newCoordinate); // Adiciona a nova posição na frente da cobra
+            if (newCoordinate != fruitBlockIndex) // Se não comeu a fruta
+            {
+                snakeCoordinates.RemoveAt(snakeCoordinates.Count - 1); // Remove a última posição
+            }
+            else
+            {
+                totalPoints++; // Incrementa a pontuação se a cobra comer a fruta
+                fruitBlockIndex = -1; // Reseta o índice da fruta
+            }
+            gridManager.UpdateGrid(snakeCoordinates, fruitBlockIndex); // Atualiza a grade
+        }
+        return gameOver; // Retorna se o jogo acabou
+    }
 }
