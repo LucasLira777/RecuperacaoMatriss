@@ -58,5 +58,11 @@ public class Grid : MonoBehaviour
         return false;
     }
 
-
+    public void ResetGrid()
+    {
+        for (int i = 0; i < gameBlocks.Length; i++)
+        {
+            gameBlocks[i].sharedMaterial = groundMaterial;
+        }
+    }
 }
