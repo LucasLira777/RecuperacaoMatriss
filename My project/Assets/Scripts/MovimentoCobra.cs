@@ -47,4 +47,27 @@ public class MovimentoCobra : MonoBehaviour
         }
         return gameOver; // Retorna se o jogo acabou
     }
+
+    private int CalculateNewCoordinate()
+    {
+        int newCoordinate = snakeCoordinates[0]; // Obtém a posição da cabeça da cobra
+
+        // Calcula a nova posição com base na direção
+        switch (snakeDirection)
+        {
+            case Direction.Right:
+                newCoordinate += gridManager.areaResolution;
+                break;
+            case Direction.Left:
+                newCoordinate -= gridManager.areaResolution;
+                break;
+            case Direction.Up:
+                newCoordinate += 1; // Move para cima
+                break;
+            case Direction.Down:
+                newCoordinate -= 1; // Move para baixo
+                break;
+        }
+        return newCoordinate; // Retorna a nova posição
+    }
 }
