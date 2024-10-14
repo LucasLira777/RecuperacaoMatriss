@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int areaResolution = 22;
+    public Material groundMaterial;
+    public Material snakeMaterial;
+    public Material headMaterial;
+    public Material fruitMaterial;
+    private Renderer[] gameBlocks;
 }
