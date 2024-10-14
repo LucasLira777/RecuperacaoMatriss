@@ -82,4 +82,14 @@ public class MovimentoCobra : MonoBehaviour
             snakeDirection = newDirection; // Muda a direção se não for oposta
         }
     }
+
+    public int GetTotalPoints()
+    {
+        return totalPoints; // Retorna a pontuação total
+    }
+
+    public int GetFruitIndex()
+    {
+        return fruitBlockIndex; // Retorna o índice da fruta
+    }
 }
