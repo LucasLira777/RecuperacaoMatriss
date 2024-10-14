@@ -21,5 +21,33 @@ public class GameMaanager : MonoBehaviour
         mainStyle.normal.textColor = Color.white;
     }
 
-    
+    void Update()
+    {
+        if (!gameStarted)
+        {
+            if (Input.anyKeyDown)
+            {
+                gameStarted = true;
+            }
+            return;
+        }
+
+        if (gameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                RestartGame();
+            }
+        }
+        else
+        {
+            timeTmp += Time.deltaTime * snakeSpeed;
+            if (timeTmp >= 1)
+            {
+                timeTmp = 0;
+                gameOver = snakeController.MoveSnake();
+                totalPoints = snakeController.GetTotalPoints();
+            }
+        }
+    }
 }
