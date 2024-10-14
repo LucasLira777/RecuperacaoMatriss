@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimentoCobra : MonoBehaviour
+public class SnakeController : MonoBehaviour
 {
     public GridManager gridManager;
     private List<int> snakeCoordinates = new List<int>();
