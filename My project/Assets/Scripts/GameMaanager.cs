@@ -12,4 +12,14 @@ public class GameMaanager : MonoBehaviour
     private GUIStyle mainStyle = new GUIStyle();
     private float timeTmp = 0;
     private int totalPoints = 0;
+
+    void Start()
+    {
+        snakeController.InitializeSnake();
+        mainStyle.fontSize = 24;
+        mainStyle.alignment = TextAnchor.MiddleCenter;
+        mainStyle.normal.textColor = Color.white;
+    }
+
+    
 }
