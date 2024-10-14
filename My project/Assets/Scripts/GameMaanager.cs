@@ -50,4 +50,21 @@ public class GameMaanager : MonoBehaviour
             }
         }
     }
+
+    void OnGUI()
+    {
+        if (gameStarted)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 100, 5, 200, 20), totalPoints.ToString(), mainStyle);
+        }
+        else
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "Press Any Key to Play\n(Use Arrows to Change Direction)", mainStyle);
+        }
+
+        if (gameOver)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 20, 200, 40), "Game Over\n(Press 'Space' to Restart)", mainStyle);
+        }
+    }
 }
