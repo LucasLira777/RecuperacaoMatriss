@@ -32,4 +32,21 @@ public class Grid : MonoBehaviour
             }
         }
     }
+
+    public void UpdateGrid(List<int> snakeCoordinates, int fruitIndex)
+    {
+        for (int i = 0; i < gameBlocks.Length; i++)
+        {
+            gameBlocks[i].sharedMaterial = groundMaterial;
+            if (snakeCoordinates.Contains(i))
+            {
+                gameBlocks[i].sharedMaterial = (snakeCoordinates[0] == i) ? headMaterial : snakeMaterial;
+            }
+            else if (i == fruitIndex)
+            {
+                gameBlocks[i].sharedMaterial = fruitMaterial;
+            }
+        }
+    }
+
 }
