@@ -92,4 +92,25 @@ public class MovimentoCobra : MonoBehaviour
     {
         return fruitBlockIndex; // Retorna o índice da fruta
     }
+
+    void Update() // Método chamado a cada frame
+    {
+        // Verifica a entrada do jogador para mudar a direção
+        if (Input.GetKeyDown(KeyCode.W)) // Para cima
+        {
+            ChangeDirection(Direction.Up);
+        }
+        else if (Input.GetKeyDown(KeyCode.S)) // Para baixo
+        {
+            ChangeDirection(Direction.Down);
+        }
+        else if (Input.GetKeyDown(KeyCode.A)) // Para esquerda
+        {
+            ChangeDirection(Direction.Left);
+        }
+        else if (Input.GetKeyDown(KeyCode.D)) // Para direita
+        {
+            ChangeDirection(Direction.Right);
+        }
+    }
 }
