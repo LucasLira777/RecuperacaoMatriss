@@ -67,4 +67,13 @@ public class GameMaanager : MonoBehaviour
             GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 20, 200, 40), "Game Over\n(Press 'Space' to Restart)", mainStyle);
         }
     }
+
+    void RestartGame()
+    {
+        gameOver = false;
+        gameStarted = false;
+        totalPoints = 0;
+        snakeController.InitializeSnake();
+        gridManager.ResetGrid();
+    }
 }
