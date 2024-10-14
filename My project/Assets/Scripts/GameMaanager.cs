@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class GameMaanager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public SnakeController snakeController;
+    public GridManager gridManager;
+    public float snakeSpeed = 10f;
+    private bool gameStarted = false;
+    private bool gameOver = false;
+    private GUIStyle mainStyle = new GUIStyle();
+    private float timeTmp = 0;
+    private int totalPoints = 0;
 }
