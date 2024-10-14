@@ -70,4 +70,16 @@ public class MovimentoCobra : MonoBehaviour
         }
         return newCoordinate; // Retorna a nova posição
     }
+
+    public void ChangeDirection(Direction newDirection)
+    {
+        // Verifica se a nova direção não é oposta à direção atual
+        if ((snakeDirection == Direction.Up && newDirection != Direction.Down) ||
+            (snakeDirection == Direction.Down && newDirection != Direction.Up) ||
+            (snakeDirection == Direction.Left && newDirection != Direction.Right) ||
+            (snakeDirection == Direction.Right && newDirection != Direction.Left))
+        {
+            snakeDirection = newDirection; // Muda a direção se não for oposta
+        }
+    }
 }
